@@ -1,15 +1,6 @@
 import React from "react";
+import { Block } from "@/types/Block";
 
-type Block = {
-  id: string;
-  type: "text" | "image";
-  content: string;
-  row: number;
-  column: 0 | 1;
-  imageHeight?: number;
-  imageWidth?: number;
-  objectFit?: React.CSSProperties["objectFit"];
-};
 
 export default function Preview({ blocks }: { blocks: Block[] }) {
   const grouped = React.useMemo(() => {
