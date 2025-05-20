@@ -1,17 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Preview from "../Preview"; // Importa el componente Preview
+import { Block } from "@/types/Block";
 
-type Block = {
-  id: string;
-  type: "text" | "image";
-  content: string;
-  row: number;
-  column: 0 | 1;
-  imageHeight?: number;
-  imageWidth?: number;
-  objectFit?: string;
-};
+
 
 export default function AboutPreviewPage() {
   const [blocks, setBlocks] = useState<Block[]>([]);

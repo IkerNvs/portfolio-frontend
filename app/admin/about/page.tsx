@@ -3,6 +3,8 @@
 import { useEffect, useState, useMemo, memo, useCallback, useRef } from "react";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import { Block } from "@/types/Block";
+
 import {
   DndContext,
   DragEndEvent,
@@ -19,16 +21,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import TiptapEditor from "@/components/TiptapEditor";
 
-type Block = {
-  id: string;
-  type: "text" | "image";
-  content: string;
-  row: number;
-  column: 0 | 1;
-  imageHeight?: number;
-  imageWidth?: number;
-  objectFit?: string;
-};
+
 
 export default function AboutEditor() {
   const [blocks, setBlocks] = useState<Block[]>([]);
