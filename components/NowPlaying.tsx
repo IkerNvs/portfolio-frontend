@@ -52,9 +52,6 @@ const NowPlaying: React.FC = () => {
           alt="Album cover"
           className="w-6 h-6 rounded"
         />
-        <span className="font-medium text-xs break-words whitespace-normal leading-tight max-w-[220px]">
-          {track.name} – {track.artists.map(a => a.name).join(", ")}
-        </span>
       </a>
     </div>
   );

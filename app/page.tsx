@@ -120,7 +120,6 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-[#121212] via-[#151515] to-[#1a1a1a] text-white overflow-x-hidden">
-      <Header />
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">

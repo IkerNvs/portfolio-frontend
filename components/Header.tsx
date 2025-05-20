@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react'
 import NowPlaying from './NowPlaying'
 import { useIsMobile } from '../hooks/useIsMobile'
 
-const HEADER_HEIGHT = '64px'
-
 const navLinks = [
   { href: '/projects', label: 'Proyectos' },
   { href: '/about', label: 'Sobre mí' },
@@ -55,7 +53,7 @@ export default function Header() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md overflow-x-hidden">
+    <nav className={`w-full z-50 bg-white shadow-md overflow-x-hidden ${!isMobile ? 'fixed top-0 left-0' : ''}`}>
       <div className={`max-w-7xl mx-auto h-full px-4 ${isMobile ? 'flex flex-col items-start gap-2 py-3' : 'flex justify-between items-center'}`}>
         {/* TOP: HOME y VOLVER */}
         <div className="flex items-center gap-3">
@@ -81,7 +79,7 @@ export default function Header() {
           </div>
         )}
 
-        {/* MOBILE ONLY: Hamburguesa y menú desplegable hacia abajo */}
+        {/* MOBILE ONLY: Hamburguesa y menú desplegable */}
         {isMobile && (
           <div className="relative w-full flex flex-col items-start mt-2">
             <button
@@ -161,7 +159,6 @@ export default function Header() {
         )}
       </div>
 
-      {/* Animaciones globales */}
       <style jsx global>{`
         @keyframes fade-in {
           from {
