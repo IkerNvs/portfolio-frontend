@@ -407,13 +407,20 @@ const HomePage = () => {
                       {/* Imagen del proyecto tamaño vertical */}
                       <div className="relative w-full h-[340px] overflow-hidden rounded-t-3xl">
                         <img
-                          src={`http://localhost:5050${project.image}` || "/api/placeholder/512/512"}
+                          src={
+                            project.image
+                              ? (project.image.startsWith("http")
+                                  ? project.image
+                                  : `http://localhost:5050${project.image.startsWith("/") ? "" : "/"}${project.image}`)
+                              : "/api/placeholder/512/512"
+                          }
                           alt={project.title}
                           width={320}
                           height={340}
                           className="w-full h-full object-cover transition-transform duration-700"
                           style={{ minHeight: 200, maxHeight: 340 }}
                         />
+
                         <div className="absolute inset-0 bg-gradient-to-t from-[#181818] via-transparent to-transparent opacity-80 pointer-events-none"></div>
                       </div>
                       <div className="flex-1 flex flex-col justify-between p-6">
