@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -19,9 +18,11 @@ export default function AboutPage() {
   const [blocks, setBlocks] = useState<Block[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5050';
+
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/about/blocks")
+      .get(`${baseUrl}/api/about/blocks`)
       .then((res) => {
         if (Array.isArray(res.data)) {
           setBlocks(res.data);
@@ -30,7 +31,7 @@ export default function AboutPage() {
         }
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [baseUrl]);
 
   const sortedBlocks = React.useMemo(
     () =>
@@ -87,12 +88,10 @@ export default function AboutPage() {
                   key={block.id}
                   style={{
                     flex: 1,
-                    // background: "#18181b", // Quitado
                     borderRadius: "8px",
                     padding: "1rem",
                     color: "#fff",
                     minHeight: "120px",
-                    // border: "1px solid #333", // Quitado
                     overflow: "auto",
                   }}
                   dangerouslySetInnerHTML={{ __html: block.content }}
@@ -106,9 +105,7 @@ export default function AboutPage() {
                     alignItems: "center",
                     justifyContent: "center",
                     minHeight: "120px",
-                    // background: "#18181b", // Quitado
                     borderRadius: "8px",
-                    // border: "1px solid #333", // Quitado
                   }}
                 >
                   {block.content ? (
@@ -120,7 +117,6 @@ export default function AboutPage() {
                         height: block.imageHeight ? `${block.imageHeight}px` : "220px",
                         objectFit: block.objectFit || "contain",
                         borderRadius: "6px",
-                        // border: "1px solid #333", // Quitado
                         display: "block",
                         margin: "0 auto",
                         background: "#222",
