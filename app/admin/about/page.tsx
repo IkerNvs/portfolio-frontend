@@ -114,7 +114,9 @@ export default function AboutEditor() {
       content: string,
       imageHeight?: number,
       imageWidth?: number,
-      objectFit?: string
+      objectFit?: React.CSSProperties["objectFit"],
+
+
     ) => {
       setBlocks((prev) =>
         prev.map((b) =>
