@@ -1,0 +1,85 @@
+
+
+.tiptap {
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #111;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  min-height: 200px;
+  outline: none;
+  /* Si necesitas depuración, descomenta la siguiente línea */
+  /* border: 2px solid red; */
+}
+
+.tiptap h1, .tiptap h2, .tiptap h3, .tiptap h4, .tiptap h5, .tiptap h6 {
+  font-weight: bold;
+  margin: 1.2em 0 0.5em 0;
+  color: #222;
+}
+
+.tiptap p {
+  margin: 0.5em 0;
+}
+
+.tiptap ul, .tiptap ol {
+  margin: 0.5em 0 0.5em 2em;
+  padding-left: 1.5em;
+}
+
+.tiptap ul {
+  list-style-type: disc;
+}
+
+.tiptap ol {
+  list-style-type: decimal;
+}
+
+.tiptap li {
+  margin: 0.2em 0;
+}
+
+.tiptap blockquote {
+  border-left: 4px solid #3b82f6;
+  margin: 1em 0;
+  padding-left: 1em;
+  color: #4b5563;
+  font-style: italic;
+  background: #f3f4f6;
+}
+
+.tiptap a {
+  color: #3b82f6;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.tiptap code {
+  background: #f3f4f6;
+  color: #b45309;
+  padding: 0.2em 0.4em;
+  border-radius: 0.3em;
+  font-size: 0.95em;
+}
+
+.tiptap pre {
+  background: #f3f4f6;
+  color: #b45309;
+  padding: 0.7em 1em;
+  border-radius: 0.3em;
+  overflow-x: auto;
+}
+
+.tiptap img {
+  max-width: 100%;
+  border-radius: 0.5em;
+  margin: 0.5em 0;
+}
+
+.tiptap hr {
+  border: none;
+  border-top: 1px solid #bbb;
+  margin: 1em 0;
+}

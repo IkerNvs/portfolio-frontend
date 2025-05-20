@@ -1,0 +1,215 @@
+/* NAVBAR STYLES */
+nav {
+  background: linear-gradient(90deg, #1a1c22 70%, #25292e 100%);
+  border-radius: 0;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  padding: 1.2em 1em;
+  margin-bottom: 2em;
+  max-width: 100%;
+  overflow-x: hidden;
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+nav:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+nav .font-black {
+  color: #fff;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(200, 65, 83, 0.15);
+  transition: color 0.3s;
+}
+
+nav .font-black:hover {
+  color: #C84153;
+}
+
+nav .flex a {
+  color: #f1f1f1;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  text-decoration: none;
+  position: relative;
+}
+
+nav .flex a:hover {
+  color: #C84153;
+  background-color: rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 65, 83, 0.15);
+}
+
+/* FOOTER STYLES - Versión Mejorada */
+footer {
+  background: linear-gradient(135deg, #1a1c22 0%, #25292e 50%, #1e2126 100%);
+  box-shadow: 
+    0 -4px 20px rgba(200, 65, 83, 0.08),
+    0 -2px 8px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  margin-top: 3em;
+  padding: 2.5em 0;
+  color: #fff;
+  text-align: center;
+  font-size: 1.05em;
+  letter-spacing: 0.03em;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de línea decorativa superior */
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #C84153, transparent);
+  box-shadow: 0 0 10px rgba(200, 65, 83, 0.5);
+}
+
+/* Efecto de brillo sutil en el fondo */
+footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(200, 65, 83, 0.03),
+    transparent
+  );
+  animation: shimmer 8s infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+footer p {
+  margin: 0;
+  opacity: 0.9;
+  font-weight: 300;
+  transition: opacity 0.3s ease;
+}
+
+footer:hover p {
+  opacity: 1;
+}
+
+/* Contenedor de redes sociales mejorado */
+.footer-socials {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-socials a {
+  color: #f1f1f1;
+  padding: 0.8em;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 45px;
+  min-height: 45px;
+}
+
+/* Efecto de ondas al hover */
+.footer-socials a::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(200, 65, 83, 0.3) 0%, transparent 70%);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.footer-socials a:hover::before {
+  width: 100px;
+  height: 100px;
+}
+
+.footer-socials a:hover {
+  color: #C84153;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(200, 65, 83, 0.3);
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 
+    0 10px 25px rgba(200, 65, 83, 0.2),
+    0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto especial para el primer y último elemento */
+.footer-socials a:first-child:hover {
+  animation: pulse 1.5s infinite;
+}
+
+.footer-socials a:last-child:hover {
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 10px 25px rgba(200, 65, 83, 0.2); }
+  50% { box-shadow: 0 10px 35px rgba(200, 65, 83, 0.4); }
+}
+
+@keyframes rotate {
+  from { transform: translateY(-5px) scale(1.1) rotate(0deg); }
+  to { transform: translateY(-5px) scale(1.1) rotate(360deg); }
+}
+
+/* Efecto de resplandor en hover del footer completo */
+footer:hover {
+  box-shadow: 
+    0 -4px 30px rgba(200, 65, 83, 0.15),
+    0 -2px 12px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  footer {
+    padding: 2em 1em;
+  }
+  
+  .footer-socials {
+    gap: 1.5rem;
+  }
+  
+  .footer-socials a {
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0.6em;
+  }
+}

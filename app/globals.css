@@ -1,0 +1,277 @@
+
+/* Tailwind base */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================== */
+/* 🎨 Variables personalizadas */
+:root {
+  --accent: #C84153;
+  --accent-dark: #a82e3c;
+  --accent-light: #FF758C;
+  --bg-dark: #121212;
+  --bg-medium: #1F1F1F;
+  --bg-light: #23272F;
+  --text-light: #f1f1f1;
+  --text-muted: #a0a0a0;
+  --font-main: 'Inter', 'Geist', Arial, sans-serif;
+}
+
+/* ===================== */
+/* 🔧 Estilos base */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  line-height: 1.7;
+  transition: background 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+.container-centered {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--accent);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+  border-radius: 4px;
+}
+
+/* ===================== */
+/* 💡 Hero Section */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero-image {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/* ===================== */
+/* 🧱 Tarjetas de proyecto */
+.project-card {
+  background-color: var(--bg-medium);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(200, 65, 83, 0.25);
+}
+
+.project-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.project-tags span {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.5rem;
+  background: #2a2a2a;
+  border-radius: 0.4rem;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ===================== */
+/* 🛠 Tech stack */
+.tech-card {
+  background: linear-gradient(135deg, var(--bg-medium), var(--bg-light));
+  padding: 1.5rem;
+  border-radius: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.tech-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(200, 65, 83, 0.15);
+}
+
+.tech-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  width: fit-content;
+  color: white;
+}
+
+.tech-card img {
+  max-width: 100px;
+  max-height: 120px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+/* ===================== */
+/* 📥 Formulario */
+form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--bg-medium);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+input, textarea {
+  background: var(--bg-light);
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: white;
+  width: 100%;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--accent);
+  background-color: #2a2a2a;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent-dark);
+}
+
+/* ===================== */
+/* 🧭 Navegación */
+nav {
+  background: linear-gradient(90deg, #181A1F, #23272F);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===================== */
+/* 🔁 Utilidades extra */
+.section {
+  padding: 3rem 0;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===================== */
+/* 🧵 Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-dark);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ===================== */
+/* 🎬 Animaciones */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* ===================== */
+/* 📱 Responsive ajustes */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  section {
+    padding: 2rem 1rem;
+  }
+  .project-card img,
+  .tech-card img {
+    max-width: 100%;
+    height: auto;
+  }
+  form {
+    padding: 1.5rem;
+  }
+}
+
