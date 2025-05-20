@@ -59,8 +59,7 @@ const HomePage = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios
-      .get("http://localhost:5050/api/projects")
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`)
       .then((res) => {
         setProjects(res.data.slice(0, 5));
         setLoading(false);
