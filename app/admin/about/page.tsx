@@ -239,7 +239,6 @@ export default function AboutEditor() {
                   height: `${block.imageHeight || 220}px`,
                   objectFit: (block.objectFit || "contain") as React.CSSProperties["objectFit"],
                   // Cambio temporal para forzar redeploy
-
                   background: "#222",
                   borderRadius: "6px",
                 }}
