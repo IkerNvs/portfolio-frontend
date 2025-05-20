@@ -13,7 +13,7 @@ type Project = {
 };
 
 export default function AdminProjects() {
-  const API_URL = "http://localhost:5050";
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5050";
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [form, setForm] = useState({
@@ -233,7 +233,6 @@ export default function AdminProjects() {
             : `${API_URL}${project.image.startsWith("/") ? project.image : "/" + project.image}`
         }
         alt={project.title}
-        className="w-[96px] h-[96px] object-cover rounded-lg border border-gray-300 dark:border-gray-700 shadow"
       />
     </div>
   )}
