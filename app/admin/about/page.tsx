@@ -235,7 +235,6 @@ export default function AboutEditor() {
                 style={{
                   width: `${block.imageWidth || 100}%`,
                   height: `${block.imageHeight || 220}px`,
-                  objectFit: (block.objectFit || "contain") as React.CSSProperties["objectFit"],
                   background: "#222",
                   borderRadius: "6px",
                 }}
