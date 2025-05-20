@@ -15,7 +15,7 @@ export default function ContactPage() {
     const toastId = toast.loading('Enviando mensaje...')
 
     try {
-      const res = await fetch('http://localhost:5050/api/contact', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export default function ContactPage() {
         setEmail('')
         setMessage('')
       } else {
-        toast.error('Error al enviar el mensaje ❌', { id: toastId })
+        toast.error(data?.message || 'Error al enviar el mensaje ❌', { id: toastId })
       }
     } catch (err) {
       toast.error('Error al conectar con el servidor ❌', { id: toastId })
@@ -51,7 +51,6 @@ export default function ContactPage() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Nombre */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="name" className="text-sm text-gray-300 font-semibold">
               Tu nombre
@@ -67,7 +66,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Correo */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="email" className="text-sm text-gray-300 font-semibold">
               Tu correo
@@ -83,7 +81,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Mensaje */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="message" className="text-sm text-gray-300 font-semibold">
               Tu mensaje
@@ -99,7 +96,6 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Botón de envío */}
           <div className="flex justify-center pt-2">
             <button
               type="submit"
