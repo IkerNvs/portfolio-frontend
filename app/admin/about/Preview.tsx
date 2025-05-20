@@ -85,7 +85,7 @@ export default function Preview({ blocks }: { blocks: Block[] }) {
                       style={{
                         width: block.imageWidth ? `${block.imageWidth}%` : "100%",
                         height: block.imageHeight ? `${block.imageHeight}px` : "220px",
-                        objectFit: block.objectFit || "contain",
+                        objectFit: (block.objectFit || "contain") as React.CSSProperties["objectFit"],
                         borderRadius: "6px",
                         border: "1px solid #333",
                         display: "block",
@@ -105,4 +105,3 @@ export default function Preview({ blocks }: { blocks: Block[] }) {
     </div>
   );
 }
-

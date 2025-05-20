@@ -115,7 +115,7 @@ export default function AboutPage() {
                       style={{
                         width: block.imageWidth ? `${block.imageWidth}%` : "100%",
                         height: block.imageHeight ? `${block.imageHeight}px` : "220px",
-                        objectFit: block.objectFit || "contain",
+                        objectFit: (block.objectFit || "contain") as React.CSSProperties["objectFit"],
                         borderRadius: "6px",
                         display: "block",
                         margin: "0 auto",
