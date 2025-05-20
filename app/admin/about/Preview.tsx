@@ -8,7 +8,7 @@ type Block = {
   column: 0 | 1;
   imageHeight?: number;
   imageWidth?: number;
-  objectFit?: string;
+  objectFit?: React.CSSProperties["objectFit"];
 };
 
 export default function Preview({ blocks }: { blocks: Block[] }) {
