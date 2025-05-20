@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useIsMobile } from '@/hooks/useIsMobile'
 
-
 const SLIDE_WIDTH = 320
 const SLIDE_HEIGHT = 600
 
@@ -24,9 +23,11 @@ export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const isMobile = useIsMobile()
 
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5050'
+
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/projects")
+      .get(`${baseUrl}/api/projects`)
       .then((res) => {
         setProjects(res.data)
         setLoading(false)
@@ -94,7 +95,7 @@ export default function ProjectsPage() {
                 >
                   <div className="relative w-full h-[340px] overflow-hidden rounded-t-3xl">
                     <img
-                      src={`http://localhost:5050${project.image}`}
+                      src={`${baseUrl}${project.image}`}
                       alt={project.title}
                       width={320}
                       height={340}
@@ -155,7 +156,7 @@ export default function ProjectsPage() {
                   >
                     <div className="relative w-full h-[340px] overflow-hidden rounded-t-3xl">
                       <img
-                        src={`http://localhost:5050${project.image}`}
+                        src={`${baseUrl}${project.image}`}
                         alt={project.title}
                         width={320}
                         height={340}
